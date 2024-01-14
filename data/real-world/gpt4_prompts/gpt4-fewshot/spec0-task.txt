@@ -1,0 +1,97 @@
+I am working in the block-based visual programming domain of Hour of Code: Maze Challenge from code.org. In this domain, the following types of coding blocks are available.
+- Basic action blocks: move forward, turn left, turn right.
+- Boolean conditions: path ahead, path left, path right.
+- Loops: repeatUntil(goal){}, repeat(int){}.
+- Conditionals: if(boolean){}, if(boolean){}else{}.
+
+In this domain, a task is represented as an 8x8 visual grid that contains WALL cells, FREE cells, AVATAR (with specific location and direction), and GOAL. We represent a task's 8x8 visual grid with the following symbols.
+# represents a WALL cell.
++ represents a FREE cell.
+* represents GOAL.
+E represents AVATAR's location facing East direction.
+W represents AVATAR's location facing West direction.
+N represents AVATAR's location facing North direction.
+S represents AVATAR's location facing South direction.
+
+Below I will give you a solution code. Can you generate a task with 8x8 visual grid that would be solved by this code?
+
+The visual grid must contain AVATAR (with specific location and direction) along with GOAL, and can have WALL cells and FREE cells. Number your grid with row numbers (1 to 8) and column numbers (1 to 8). Also, you should tell me the position of AVATAR and GOAL in your generated task so we are sure about the numbering.
+
+You can verify the correctness of your generated task by executing the solution code on your task. A solution code for a task takes AVATAR to GOAL when executed. Note that AVATAR can only move on FREE cells and will crash if it tries to go to a WALL cell. If your generated task is not correct, you should try again to generate a correct task.
+
+I am giving you some examples comprising a solution code and task that is solved by this code. Provide the task for the last solution code.
+
+--- Example 1: Solution ---
+def run(){
+  repeatUntil(goal){
+    move forward
+    move forward
+    turn right
+    move forward
+  }
+}
+
+--- Example 1: Task ---
+1: # # # # # # # #
+2: # # # # # # # #
+3: # # # # # # # #
+4: # # # # # # # #
+5: # + + + + # # #
+6: # + # # + # # #
+7: # N # # + # # #
+8: # # # * + # # #
+
+--- Example 2: Solution ---
+def RUN(){
+  repeat(3){
+    move forward
+  }
+  turn right
+  move forward
+  turn left
+  repeat(3){
+    move forward
+  }
+}
+
+--- Example 2: Task ---
+1: # # # * # # # #
+2: # # # + # # # #
+3: # # # + # # # #
+4: # # + + # # # #
+5: # # + # # # # #
+6: # # + # # # # #
+7: # # N # # # # #
+8: # # # # # # # #
+
+--- Example 3: Solution ---
+def RUN(){
+  repeatUntil(goal){
+    if(path ahead){
+      move forward
+    }
+    else{
+      turn right
+    }
+  }
+}
+
+--- Example 3: Task ---
+1: # # # # # # # #
+2: # E + + + + + #
+3: # # + # # # + #
+4: # # # # # + + #
+5: # # + * + + + #
+6: # # # + # # # #
+7: # # # # # # # #
+8: # # # # # # # #
+
+--- Example 4: Solution ---
+def run(){
+    repeat(3){
+        move forward
+        turn right
+    }
+}
+
+--- Example 4: Task ---

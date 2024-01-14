@@ -1,0 +1,83 @@
+I am working in the block-based visual programming domain of Karel programming. In this domain, the following types of coding blocks are available:
+- Basic action blocks: move forward, turn left, turn right, pick marker, put marker.
+- Boolean conditions: path ahead, path left, path right, marker present, no path ahead, no marker present.
+- Loops: while(boolean){}, repeat(int){}.
+- Conditionals: if(boolean){}, if(boolean){}else{}.
+
+In this domain, a task is represented as a pair of 10x10 visual pregrid and 10x10 visual postgrid. This pregrid and postgrid contain WALL cells, FREE cells, AVATAR (with specific location and direction), and markers. We represent a task's 10x10 visual pregrid and postgrid with the following symbols.
+# represents a WALL cell.
++ represents a FREE cell.
+m represents a cell with marker.
+E represents AVATAR's location on a cell without marker, facing East direction.
+W represents AVATAR's location on a cell without marker, facing West direction.
+N represents AVATAR's location on a cell without marker, facing North direction.
+S represents AVATAR's location on a cell without marker, facing South direction.
+Em represents AVATAR's location on a cell with marker, facing East direction.
+Wm represents AVATAR's location on a cell with marker, facing West direction.
+Nm represents AVATAR's location on a cell with marker, facing North direction.
+Sm represents AVATAR's location on a cell with marker, facing South direction.
+
+Below, I will give you a program structure. Can you generate a code that respects this program structure?
+
+You should not change the structure. This means that you shouldn't add or remove any loops (e.g., while(boolean){}, repeat(int){}) and conditionals (e.g., if(boolean){}, if(boolean){}else{}). The program needs to be valid, meaning that bodies of constructs cannot remain empty. To complete this given structure, you can use basic action blocks, boolean conditions, and iteration numbers that are available in Karel programming.
+
+I am giving you some examples comprising a program structure and a code that respects the structure. Provide the code for the last structure.
+
+--- Example 1: Structure ---
+def run(){
+}
+
+--- Example 1: Code ---
+def run(){
+    move forward
+    move forward
+    put marker
+    move forward
+    move forward
+}
+
+--- Example 2: Structure ---
+def run(){
+    while(boolean){
+    }
+}
+
+--- Example 2: Code ---
+def run(){
+    put marker
+    while(path ahead){
+        move forward
+        turn left
+        move forward
+        turn right
+        put marker
+    }
+}
+
+--- Example 3: Structure ---
+def run(){
+    while(boolean){
+        repeat(int){
+        }
+    }
+}
+
+--- Example 3: Code ---
+def run(){
+    while(path ahead){
+        move forward
+        repeat(4){
+            pick marker
+        }
+    }
+}
+
+--- Example 4: Structure ---
+def run(){
+    while(boolean){
+        if(boolean){
+        }
+    }
+}
+
+--- Example 4: Code ---

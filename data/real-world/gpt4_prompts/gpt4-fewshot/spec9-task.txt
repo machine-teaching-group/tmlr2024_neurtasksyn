@@ -1,0 +1,142 @@
+I am working in the block-based visual programming domain of Karel programming. In this domain, the following types of coding blocks are available.
+- Basic action blocks: move forward, turn left, turn right, pick marker, put marker.
+- Boolean conditions: path ahead, path left, path right, marker present, no path ahead, no marker present.
+- Loops: while(boolean){}, repeat(int){}.
+- Conditionals: if(boolean){}, if(boolean){}else{}.
+
+In this domain, a task is represented as a pair of 10x10 visual pregrid and 10x10 visual postgrid. This pregrid and postgrid contain WALL cells, FREE cells, AVATAR (with specific location and direction), and markers. We represent a task's 10x10 visual pregrid and postgrid with the following symbols.
+# represents a WALL cell.
++ represents a FREE cell.
+m represents a cell with marker.
+E represents AVATAR's location on a cell without marker, facing East direction.
+W represents AVATAR's location on a cell without marker, facing West direction.
+N represents AVATAR's location on a cell without marker, facing North direction.
+S represents AVATAR's location on a cell without marker, facing South direction.
+Em represents AVATAR's location on a cell with marker, facing East direction.
+Wm represents AVATAR's location on a cell with marker, facing West direction.
+Nm represents AVATAR's location on a cell with marker, facing North direction.
+Sm represents AVATAR's location on a cell with marker, facing South direction.
+
+Below I will give you a solution code. Can you generate a task with a pair of 10x10 visual pregrid and 10x10 visual postgrid that would be solved by this code?
+
+Both the visual pregrid and visual postgrid must contain AVATAR (with specific location and direction), and can have WALL cells, FREE cells, and markers. Number your grids with row numbers (1 to 10) and column numbers (1 to 10). Also, you should tell me the position of AVATAR in your generated pregrid and postgrid so we are sure about the numbering.
+
+You can verify the correctness of your generated task by executing the solution code on your task. A solution code for a task transforms the pregrid into the postgrid when executed. Note that AVATAR can only move on FREE cells and will crash if it tries to go to a WALL cell. If your generated task is not correct, you should try again to generate a correct task.
+
+I am giving you some examples comprising a solution code and task that is solved by this code. Provide the task for the last solution code.
+
+--- Example 1: Solution ---
+def run(){
+  pick marker
+  move forward
+  pick marker
+  move forward
+  pick marker
+  move forward
+}
+
+--- Example 1: Task Pregrid ---
+1: + + + + + + + + + +
+2: + + + + + + + + + +
+3: + + + + + + + + + +
+4: + + + m + + + + + +
+5: + + + m + + + + + +
+6: + + + Nm + + + + + +
+7: + + + + + + + + + +
+8: + + + + + + + + + +
+9: + + + + + + + + + +
+10: + + + + + + + + + +
+
+--- Example 1: Task Postgrid ---
+1: + + + + + + + + + +
+2: + + + + + + + + + +
+3: + + + N + + + + + +
+4: + + + + + + + + + +
+5: + + + + + + + + + +
+6: + + + + + + + + + +
+7: + + + + + + + + + +
+8: + + + + + + + + + +
+9: + + + + + + + + + +
+10: + + + + + + + + + +
+
+--- Example 2: Solution ---
+def run(){
+  while(no marker present){
+    move forward
+  }
+  turn right
+  while(no marker present){
+    move forward
+  }
+}
+
+--- Example 2: Task Pregrid ---
+1: + + + + + + + + + +
+2: + + + + + + + + + +
+3: + E + + + + m + + +
+4: + + + + + + + + + +
+5: + + + + + + + + + +
+6: + + + + + + + + + +
+7: + + + + + + m + + +
+8: + + + + + + + + + +
+9: + + + + + + + + + +
+10: + + + + + + + + + +
+
+--- Example 2: Task Postgrid ---
+1: + + + + + + + + + +
+2: + + + + + + + + + +
+3: + + + + + + m + + +
+4: + + + + + + + + + +
+5: + + + + + + + + + +
+6: + + + + + + + + + +
+7: + + + + + + Sm + + +
+8: + + + + + + + + + +
+9: + + + + + + + + + +
+10: + + + + + + + + + +
+
+--- Example 3: Solution ---
+def RUN(){
+  while(path ahead){
+    move forward
+    if(no marker present){
+        put marker
+    }
+  }
+}
+
+--- Example 3: Task Pregrid ---
+1: + + + + + + + + + +
+2: + + + + S + + + + +
+3: + + + + m + + + + +
+4: + + + + + + + + + +
+5: + + + + + + + + + +
+6: + + + + m + + + + +
+7: + + + + + + + + + +
+8: + + + + m + + + + +
+9: + + + + # + + + + +
+10: + + + + + + + + + +
+
+--- Example 3: Task Postgrid ---
+1: + + + + + + + + + +
+2: + + + + + + + + + +
+3: + + + + m + + + + +
+4: + + + + m + + + + +
+5: + + + + m + + + + +
+6: + + + + m + + + + +
+7: + + + + m + + + + +
+8: + + + + Sm + + + + +
+9: + + + + # + + + + +
+10: + + + + + + + + + +
+
+--- Example 4: Solution ---
+def run(){
+    while(path ahead){
+        repeat(3){
+            move forward
+            put marker
+        }
+        turn left
+    }
+}
+
+--- Example 4: Task Pregrid ---

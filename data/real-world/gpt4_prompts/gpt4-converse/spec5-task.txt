@@ -1,0 +1,46 @@
+=== Initial ===
+
+I am working in the block-based visual programming domain of Karel programming. In this domain, the following types of coding blocks are available:
+- Basic action blocks: move forward, turn left, turn right, pick marker, put marker.
+- Boolean conditions: path ahead, path left, path right, marker present, no path ahead, no marker present.
+- Loops: while(boolean){}, repeat(int){}.
+- Conditionals: if(boolean){}, if(boolean){}else{}.
+
+In this domain, a task is represented as a pair of 10x10 visual pregrid and 10x10 visual postgrid. This pregrid and postgrid contain WALL cells, FREE cells, AVATAR (with specific location and direction), and markers. We represent a task's 10x10 visual pregrid and postgrid with the following symbols.
+# represents a WALL cell.
++ represents a FREE cell.
+m represents a cell with marker.
+E represents AVATAR's location on a cell without marker, facing East direction.
+W represents AVATAR's location on a cell without marker, facing West direction.
+N represents AVATAR's location on a cell without marker, facing North direction.
+S represents AVATAR's location on a cell without marker, facing South direction.
+Em represents AVATAR's location on a cell with marker, facing East direction.
+Wm represents AVATAR's location on a cell with marker, facing West direction.
+Nm represents AVATAR's location on a cell with marker, facing North direction.
+Sm represents AVATAR's location on a cell with marker, facing South direction.
+
+Below I am giving you a solution code. Can you generate a task with a pair of 10x10 visual pregrid and 10x10 visual postgrid that would be solved by this code?
+
+--- Solution ---
+def run(){
+  move forward
+  pick marker
+  turn left
+  move forward
+  put marker
+  turn right
+  move forward
+}
+
+Both the visual pregrid and visual postgrid must contain AVATAR (with specific location and direction), and can have WALL cells, FREE cells, and markers. Number your grids with row numbers (1 to 10) and column numbers (1 to 10). Also, you should tell me the position of AVATAR in your generated pregrid and postgrid so we are sure about the numbering.
+
+You can verify the correctness of your generated task by executing the solution code on your task. A solution code for a task transforms the pregrid into the postgrid when executed. Note that AVATAR can only move on FREE cells and will crash if it tries to go to a WALL cell. If your generated task is not correct, you should try again to generate a correct task.
+
+--- Task ---
+
+
+
+
+=== Follow-up ===
+
+Your code does not solve the generated pregrid and postgrid. Be careful with the AVATAR in the postgrid as it should show the effect of the code execution. Keep the code fixed. Can you try to generate a new visual pregrid and postgrid and explain your reasoning? Recall that your code, when executed, should transform the pregrid into the postgrid. Be careful with the AVATAR in the postgrid as it should show the effect of the code execution.

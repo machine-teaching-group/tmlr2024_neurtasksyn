@@ -1,0 +1,85 @@
+I am working in the block-based visual programming domain of Hour of Code: Maze Challenge from code.org. In this domain, the following types of coding blocks are available:
+- Basic action blocks: move forward, turn left, turn right.
+- Boolean conditions: path ahead, path left, path right.
+- Loops: repeatUntil(goal){}, repeat(int){}.
+- Conditionals: if(boolean){}, if(boolean){}else{}.
+
+In this domain, a task is represented as an 8x8 visual grid that contains WALL cells, FREE cells, AVATAR (with specific location and direction), and GOAL. We represent a task's 8x8 visual grid with the following symbols.
+# represents a WALL cell.
++ represents a FREE cell.
+* represents GOAL.
+E represents AVATAR's location facing East direction.
+W represents AVATAR's location facing West direction.
+N represents AVATAR's location facing North direction.
+S represents AVATAR's location facing South direction.
+
+Below, I will give you a program structure. Can you generate a code that respects this program structure?
+
+You should not change the structure. This means that you shouldn't add or remove any loops (e.g., repeatUntil(goal){}, repeat(int){}) and conditionals (e.g., if(boolean){}, if(boolean){}else{}). The program needs to be valid, meaning that bodies of constructs cannot remain empty. To complete this given structure, you can use basic action blocks, boolean conditions, and iteration numbers that are available in the Hour of Code: Maze Challenge programming.
+
+I am giving you some examples comprising a program structure and a code that respects the structure. Provide the code for the last structure.
+
+--- Example 1: Structure ---
+def run(){
+    repeatUntil(goal){
+    }
+}
+
+--- Example 1: Code ---
+def run(){
+    repeatUntil(goal){
+        turn right
+        move forward
+        turn left
+        move forward
+    }
+}
+
+--- Example 2: Structure ---
+def run(){
+    repeat(int){
+    }
+    repeat(int){
+    }
+}
+
+--- Example 2: Code ---
+def run(){
+    repeat(4){
+        move forward
+    }
+    turn left
+    repeat(5){
+        move forward
+    }
+}
+
+--- Example 3: Structure ---
+def run(){
+    repeatUntil(goal){
+        if(boolean){
+        }
+        else{
+        }
+    }
+}
+
+--- Example 3: Code ---
+def run(){
+    repeatUntil(goal){
+        if(path ahead){
+            move forward
+        }
+        else{
+            turn left
+        }
+    }
+}
+
+–-- Example 4: Structure –--
+def run(){
+    repeat(int){
+    }
+}
+
+--- Example 4: Code ---

@@ -1,0 +1,43 @@
+=== Initial ===
+
+I am working in the block-based visual programming domain of Hour of Code: Maze Challenge from code.org. In this domain, the following types of coding blocks are available:
+- Basic action blocks: move forward, turn left, turn right.
+- Boolean conditions: path ahead, path left, path right.
+- Loops: repeatUntil(goal){}, repeat(int){}.
+- Conditionals: if(boolean){}, if(boolean){}else{}.
+
+In this domain, a task is represented as an 8x8 visual grid that contains WALL cells, FREE cells, AVATAR (with specific location and direction), and GOAL. We represent a task's 8x8 visual grid with the following symbols.
+# represents a WALL cell.
++ represents a FREE cell.
+* represents GOAL.
+E represents AVATAR's location facing East direction.
+W represents AVATAR's location facing West direction.
+N represents AVATAR's location facing North direction.
+S represents AVATAR's location facing South direction.
+
+Below, I am giving you a program structure. Can you generate a code that respects this program structure?
+
+–-- Structure –--
+def run(){
+    repeatUntil(goal){
+        if(boolean){
+        }
+        if(boolean){
+        }
+    }
+}
+
+You should not change the structure. This means that you shouldn't add or remove any loops (e.g., repeatUntil(goal){}, repeat(int){}) and conditionals (e.g., if(boolean){}, if(boolean){}else{}). The program needs to be valid, meaning that bodies of constructs cannot remain empty. To complete this given structure, you can use basic action blocks, boolean conditions, and iteration numbers that are available in the Hour of Code: Maze Challenge programming.
+
+--- Code ---
+
+
+
+=== Extra constructs ===
+
+Your code does not follow the program structure I have given. You shouldn't add or remove any loops (e.g., repeatUntil(goal){}, repeat(int){}) and conditionals (e.g., if(boolean){}, if(boolean){}else{}). Can you try to generate a new code for the same structure?
+
+
+=== Misc. reasons ===
+
+Your code could be improved! You can think of producing a better code by reasoning about the AVATAR’s actions when the code is executed. Can you try to generate a new code respecting the program structure I have given?
